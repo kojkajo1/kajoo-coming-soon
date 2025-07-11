@@ -1,32 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Coming Soon</title>
-    <style>
-        body { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            font-family: sans-serif; 
-            background: #000000;
-            color: #ffffff;
-            flex-direction: column;
-            text-align: center;
-            padding: 0 20px;
-        }
-        img {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Coming Soon</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #000000, #252525, #000000);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0 10px;
+}
+p {
+    font-size: 1.1rem;
+    max-width: 400px;
+}
+form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #ddd;
+}
+.socials {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+.socials a {
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.socials a:hover {
+    color: #ddd;
+}
+.tshirt {
+    max-width: 250px;
+    margin-top: 30px;
+    border-radius: 15px;
+}
+.lang-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
 </head>
 <body>
-    <img src="logo.png" alt="Logo">
-    <h1>🚧 Coming Soon 🚧</h1>
-    <p>Our website is under construction. Stay tuned!</p>
+
+<button class="lang-toggle" onclick="toggleLang()">AR</button>
+
+<!-- Logo at the top -->
+<img src="logo.png" alt="Logo" class="logo">
+
+<h1 id="title">🚧 Coming Soon 🚧</h1>
+<p id="desc">Get ready everyone! We are currently working on something awesome.</p>
+
+<!-- Email form currently disabled -->
+<!-- 
+<form onsubmit="event.preventDefault(); alert('Thank you! We will notify you.');">
+    <input type="email" placeholder="Email address" required>
+    <button type="submit" id="notify-btn">Notify Me</button>
+</form> 
+-->
+
+<div class="socials">
+    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+
+<!-- T-shirt image below socials -->
+<img src="tshirt.png" alt="T-shirt" class="tshirt">
+
+<script>
+let isArabic = false;
+function toggleLang() {
+    isArabic = !isArabic;
+    if (isArabic) {
+        document.documentElement.lang = "ar";
+        document.documentElement.dir = "rtl";
+        document.getElementById("title").textContent = "🚧 قريباً 🚧";
+        document.getElementById("desc").textContent = "استعدوا جميعاً! نحن نعمل حالياً على شيء رائع.";
+        document.querySelector(".lang-toggle").textContent = "EN";
+    } else {
+        document.documentElement.lang = "en";
+        document.documentElement.dir = "ltr";
+        document.getElementById("title").textContent = "🚧 Coming Soon 🚧";
+        document.getElementById("desc").textContent = "Get ready everyone! We are currently working on something awesome.";
+        document.querySelector(".lang-toggle").textContent = "AR";
+    }
+}
+</script>
+
 </body>
 </html>
