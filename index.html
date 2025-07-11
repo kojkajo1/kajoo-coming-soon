@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Coming Soon</title>
+<title>قريباً - كاجو فاشن</title>
+
+<!-- Open Graph Meta Tags for WhatsApp, Facebook, Telegram, etc. -->
+<meta property="og:title" content="قريباً - كاجو فاشن" />
+<meta property="og:description" content="استعدوا! نحن على وشك الانطلاق بمنتجات أزياء سورية وتركية عالية الجودة." />
+<meta property="og:image" content="https://kajoofashion.com/logo.png" />
+<meta property="og:url" content="https://kajoofashion.com/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
 body {
     margin: 0;
@@ -89,13 +100,13 @@ button:hover {
 </head>
 <body>
 
-<button class="lang-toggle" onclick="toggleLang()">AR</button>
+<button class="lang-toggle" onclick="toggleLang()">EN</button>
 
 <!-- Logo at the top -->
-<img src="logo.png" alt="Logo" class="logo">
+<img src="logo.png" alt="شعار كاجو فاشن" class="logo">
 
-<h1 id="title">🚧 Coming Soon 🚧</h1>
-<p id="desc">Get ready everyone! We are currently working on something awesome.</p>
+<h1 id="title">🚧 قريباً 🚧</h1>
+<p id="desc">استعدوا جميعاً! نحن نعمل حالياً على شيء رائع.</p>
 
 <!-- Email form currently disabled -->
 <!-- 
@@ -106,17 +117,17 @@ button:hover {
 -->
 
 <div class="socials">
-    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://instagram.com/" target="_blank" aria-label="انستجرام"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://tiktok.com/" target="_blank" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
 </div>
 
 <!-- T-shirt image below socials -->
-<img src="tshirt.png" alt="T-shirt" class="tshirt">
+<img src="tshirt.png" alt="صورة تيشيرت" class="tshirt">
 
 <script>
-let isArabic = false;
+let isArabic = true;
 function toggleLang() {
     isArabic = !isArabic;
     if (isArabic) {
